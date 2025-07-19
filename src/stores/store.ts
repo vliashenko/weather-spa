@@ -1,10 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import cityReducer from '../features/city/stores/city-reducer';
+import currentWeatherReducer from '../features/current-weather/stores/current-weather-reducer';
 
 const combinedReducers = combineReducers({
   cities: cityReducer,
-  currentWeather: []
+  currentWeather: currentWeatherReducer
 });
 
 const store = configureStore({
@@ -15,6 +16,6 @@ const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export default store;

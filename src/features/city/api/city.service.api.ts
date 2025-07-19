@@ -2,13 +2,15 @@ import { createAsyncThunk } from '@reduxjs/toolkit/react';
 import type { City } from '../types';
 
 export const getSavedCities = createAsyncThunk<City[]>('currentWeather/getCities', async () => {
+  let current: City[];
   try {
-    const current = JSON.parse(localStorage.getItem('cities') || '[]');
-    return current ?? [];
+    current = JSON.parse(localStorage.getItem('cities') || '[]');
   } catch (err) {
     console.error(err);
     throw new Error('Failed to load cities from storage');
   }
+
+  return current ?? [];
 });
 
 export const addCityToSaved = createAsyncThunk('currentWeather/addCity', async (city: City) => {
