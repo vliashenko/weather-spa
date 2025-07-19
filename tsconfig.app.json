@@ -6,6 +6,13 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "incremental": true,
+    "baseUrl": "./src",
+    "paths": {
+      "shared/*": [ "shared/*" ],
+      "stores/*": [ "stores/*" ],
+      "pages/*": [ "pages/*" ]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -19,9 +26,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
   },
   "include": ["src"]
 }

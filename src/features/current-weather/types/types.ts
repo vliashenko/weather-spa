@@ -23,4 +23,5 @@ export type CurrentWeather = {
     deg: number;
     gust: number;
   };
+  city: string;
 };
