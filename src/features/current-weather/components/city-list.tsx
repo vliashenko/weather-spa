@@ -11,7 +11,7 @@ export default function CityList() {
   const onGetWeatherClick = (city: string) => dispatch(getCurrentWeatherByCity(city));
   const onRemoveClick = (city: string) => dispatch(deleteCityFromSaved(city));
   return (
-    <div className="some">
+    <div className="city-list-wrapper">
       {cities.map((city) => {
         return (
           <div key={city} className="city-card" onClick={() => onGetWeatherClick(city)}>

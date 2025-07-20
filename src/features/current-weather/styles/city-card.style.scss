@@ -1,9 +1,17 @@
 @import '/src/styles/_variables.scss';
 
 .city-list-wrapper {
+    display: flex;
     background: #f7f7f7;
     border-radius: 0 1rem 1rem 0;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: 320px) and (max-width: 460px) {
+        flex-direction: row;
+        width: 100vw;
+        overflow-x: scroll;
+        margin-top: 0.4rem;
+    }
 }
 
 .city-card {

@@ -23,8 +23,11 @@ export default function CurrentWeatherCard() {
   const debouncedSearch = useDeounce(search);
 
   const onRefreshClick = () => dispatch(getCurrentWeatherByCity(weather?.city ?? debouncedSearch));
-  const onSaveClick = () => dispatch(addCityToSaved(weather?.city ?? debouncedSearch));
   const onSeachClick = () => debouncedSearch && dispatch(getCurrentWeatherByCity(debouncedSearch));
+  const onSaveClick = () => {
+    dispatch(addCityToSaved(weather?.city ?? debouncedSearch));
+    setSearch('');
+  };
 
   return (
     <div className="weather-card">
