@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../../stores';
-import { getCurrentWeatherByCity, getCurrentWeatherByGeo } from '../api';
+import { getCurrentWeatherByCity, getCurrentWeatherByGeo, getSavedCities } from '../services';
+import type { City } from '../types';
 
-export const useCurrentWeather = () => {
+export const useCurrentWeather = (city?: City) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -16,11 +17,13 @@ export const useCurrentWeather = () => {
         },
         (error) => {
           console.warn('Geolocation error:', error);
-          dispatch(getCurrentWeatherByCity('Kyiv'));
+          dispatch(getCurrentWeatherByCity(city ?? 'Kyiv'));
+          dispatch(getSavedCities());
         }
       );
     } else {
-      dispatch(getCurrentWeatherByCity('Kyiv'));
+      dispatch(getCurrentWeatherByCity(city ?? 'Kyiv'));
+      dispatch(getSavedCities());
     }
-  }, [dispatch]);
+  }, [city, dispatch]);
 };

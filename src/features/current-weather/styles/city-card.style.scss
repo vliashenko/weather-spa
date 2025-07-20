@@ -1,0 +1,40 @@
+@import '/src/styles/_variables.scss';
+
+.city-list-wrapper {
+    background: #f7f7f7;
+    border-radius: 0 1rem 1rem 0;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+}
+
+.city-card {
+    background: $primary-gradient;
+    margin: 1rem;
+    color: $primary-color;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+
+    .city-card-wrapper {
+        position: relative
+    }
+    
+    p {
+        padding: 1rem;
+        font-weight: 600;
+    }
+
+    button {
+        position: absolute;
+        top: -1.4rem;
+        right: -1.4rem;
+        border-radius: 50%;
+        padding: 0.4rem;
+        background: #fffcfc;
+        cursor: pointer;
+
+        &:hover {
+            background: #ffdddd;
+        }
+    }
+}

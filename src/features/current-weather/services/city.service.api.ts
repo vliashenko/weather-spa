@@ -13,18 +13,26 @@ export const getSavedCities = createAsyncThunk<City[]>('currentWeather/getCities
   return current ?? [];
 });
 
-export const addCityToSaved = createAsyncThunk('currentWeather/addCity', async (city: City) => {
-  try {
-    const current: City[] = JSON.parse(localStorage.getItem('cities') || '[]');
-    const updated = [...current, city];
-    localStorage.setItem('cities', JSON.stringify(updated));
-  } catch (err) {
-    console.error(err);
-    throw new Error('Failed to add a city to the storage');
-  }
+export const addCityToSaved = createAsyncThunk(
+  'currentWeather/addCity',
+  async (city: City, { dispatch }) => {
+    try {
+      const current: City[] = JSON.parse(localStorage.getItem('cities') || '[]');
+      const updated = [...current, city];
 
-  return city;
-});
+      if (!current.includes(city)) {
+        localStorage.setItem('cities', JSON.stringify(updated));
+      }
+
+      await dispatch(getSavedCities());
+    } catch (err) {
+      console.error(err);
+      throw new Error('Failed to add a city to the storage');
+    }
+
+    return city;
+  }
+);
 
 export const deleteCityFromSaved = createAsyncThunk(
   'currentWeather/deleteCity',

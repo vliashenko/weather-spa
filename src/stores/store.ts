@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import cityReducer from '../features/city/stores/city-reducer';
+
+import cityReducer from '../features/current-weather/stores/city-reducer';
 import currentWeatherReducer from '../features/current-weather/stores/current-weather-reducer';
 
 const combinedReducers = combineReducers({

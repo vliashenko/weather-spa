@@ -1,0 +1,20 @@
+@import '/src/styles/style-reset';
+
+.wrapper {
+  display: flex;
+  position: relative;
+  background-image: url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg?semt=ais_hybrid&w=740');
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-repeat: repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+.city-list-wrapper {
+
+}

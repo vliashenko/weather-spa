@@ -4,10 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "shared/*": [ "shared/*" ],
-      "stores/*": [ "stores/*" ],
-      "pages/*": [ "pages/*" ]
-
-    },
+      "shared/*": ["shared/*"],
+      "stores/*": ["stores/*"],
+      "pages/*": ["pages/*"],
+      "features/*": ["features/*"]
+    }
   }
 }

@@ -18,11 +18,12 @@ export const getCurrentWeatherByCity = createAsyncThunk<CurrentWeather, string>(
       const response = await res.json();
 
       return {
-        weather: response.weather,
+        weather: response.weather[0],
         main: response.main,
         visibility: response.visibility,
         wind: response.wind,
-        city: response.name
+        city: response.name,
+        country: response.sys.country
       };
     } catch (err) {
       console.error(err);
@@ -51,7 +52,8 @@ export const getCurrentWeatherByGeo = createAsyncThunk<
       main: response.main,
       visibility: response.visibility,
       wind: response.wind,
-      city: response.name
+      city: response.name,
+      country: response.sys.country
     };
   } catch (err) {
     console.error(err);

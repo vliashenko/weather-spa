@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { addCityToSaved, deleteCityFromSaved, getSavedCities } from '../api';
+import { addCityToSaved, deleteCityFromSaved, getSavedCities } from '../services';
 import type { City } from '../types';
 
 const initialState: { cities: City[]; loading: boolean; error: string } = {
@@ -14,7 +14,7 @@ const citySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getSavedCities.fulfilled, (state, action: PayloadAction<City[]>) => {
-      if (action.payload) {
+      if (action.payload.length) {
         state.cities = action.payload;
       }
       state.loading = false;
@@ -28,7 +28,10 @@ const citySlice = createSlice({
     });
 
     builder.addCase(addCityToSaved.fulfilled, (state, action) => {
-      state.cities = [...state.cities, action.payload];
+      if (!state.cities.includes(action.payload)) {
+        state.cities = [...state.cities, action.payload];
+      }
+
       state.loading = false;
     });
     builder.addCase(addCityToSaved.rejected, (state, action) => {

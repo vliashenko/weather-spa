@@ -1,12 +1,10 @@
 export type CurrentWeather = {
-  weather: [
-    {
-      id: number;
-      main: string;
-      description: string;
-      icon: string;
-    }
-  ];
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  };
   main: {
     temp: number;
     feels_like: number;
@@ -24,4 +22,7 @@ export type CurrentWeather = {
     gust: number;
   };
   city: string;
+  country: string;
 };
+
+export type City = string;

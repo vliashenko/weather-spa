@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { getCurrentWeatherByCity, getCurrentWeatherByGeo } from '../api';
+import { getCurrentWeatherByCity, getCurrentWeatherByGeo } from '../services';
 import type { CurrentWeather } from '../types';
 
 const initialState: { currentWeather: CurrentWeather | null; loading: boolean; error: string } = {
