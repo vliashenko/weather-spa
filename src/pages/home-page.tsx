@@ -5,7 +5,7 @@ import './styles.scss';
 
 export default function HomePage() {
   useCurrentWeather();
-  console.log('API key:', import.meta.env.VITE_WEATHER_API_KEY);
+
   return (
     <div className="wrapper">
       <div className="weather-card-wrapper">
