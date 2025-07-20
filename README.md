@@ -1,69 +1,21 @@
-# React + TypeScript + Vite
+# Weather SPA using openweather.api
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern single-page application (SPA) built with React, TypeScript, Redux Toolkit, and Vite, allowing users to:
 
-Currently, two official plugins are available:
+🔍 Search and save cities to get current weather conditions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+♻️ Update weather data on demand with a refresh button
 
-## Expanding the ESLint configuration
+📈 View detailed weather info, including temperature graphs
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+💾 Persist saved cities using localStorage
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📱 Fully responsive for mobile and desktop
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked
+The app consumes the OpenWeatherMap API and supports error handling, fallbacks, and a smooth UX for both first-time and returning users.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname
-      }
-      // other options...
-    }
-  }
-]);
-```
+link to preview: https://weather-spa-opal.vercel.app/
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/8be5029d-8990-47f5-b814-17193571ed40" />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname
-      }
-      // other options...
-    }
-  }
-]);
-```
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/07a069fb-f94e-4f50-b129-04d4e992a096" />
