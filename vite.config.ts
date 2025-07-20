@@ -5,6 +5,9 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  define: {
+    VITE_WEATHER_API_KEY: JSON.stringify(process.env.VITE_WEATHER_API_KEY)
+  },
   resolve: {
     alias: {
       shared: path.resolve(__dirname, 'src/shared'),
