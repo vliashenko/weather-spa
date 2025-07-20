@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit/react';
 import type { CurrentWeather } from '../types';
 
-const apiUrl = import.meta.env.VITE_WEATHER_API_KEY;
+const apiUrl = import.meta.env.WEATHER_API_KEY;
 
 export const getCurrentWeatherByCity = createAsyncThunk<CurrentWeather, string>(
   'currentWeather/fetchByCity',
