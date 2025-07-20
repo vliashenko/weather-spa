@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   define: {
-    WEATHER_API_KEY: JSON.stringify(process.env.WEATHER_API_KEY)
+    WEATHER_API_KEY: JSON.stringify(process.env.VITE_WEATHER_API_KEY)
   },
   resolve: {
     alias: {
